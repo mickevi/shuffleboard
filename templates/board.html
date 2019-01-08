@@ -5,21 +5,24 @@
 {% block content %}
 
 Boardname: {{bname}}
-<div class="card" style="width: 30rem;">
-    <div class="card-body">
-        <form action="/board/{{bname}}/add" method="post">
+  <div class="card text-white bg-success mb-3" style="max-width: 30rem;">
+  <div class="card-header">Add Note</div>
+  <div class="card-body">
+      <form action="/board/{{bname}}/add" method="post">
 
             <div class="form-group">
-                <label for="note">Note</label>
+
                 <textarea rows=5 cols="30" maxlength="250" class="form-control" name="note" id="note" aria-describedby="Note" placeholder="Long description.."></textarea>
             </div>
             <div class="form-group">
-                <label for="labels">Labels</label>
+                <label for="labels">Labels (optional)</label>
                 <input aria-describedby="Tags" class="form-control" id="labels" name="labels" placeholder="Label1, label2, ..."
                        type="text"/>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
         </form>
-    </div>
+
+  </div>
 </div>
+
 {% endblock %}
